@@ -1,0 +1,27 @@
+{
+  "Enum Template": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "enum",
+    "body": [
+      "export const ${1:EnumName} = Object.freeze({",
+      "  $0",
+      "} as const)",
+      "",
+      "export type $1 = typeof $1[keyof typeof $1]",
+      ""
+    ]
+  },
+  "Model Template": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "model",
+    "body": [
+      "import { Static, Type } from \"@sinclair/typebox\"",
+      "",
+      "export const ${1:ModelName} = Type.Object({",
+      "  $0",
+      "})"
+      ""
+      "export type $1 = Static<typeof $1>"
+    ]
+  }
+}

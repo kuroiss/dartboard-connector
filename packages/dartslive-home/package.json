@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "@minimalcorp/dartslive-home-bluetooth-connector",
+  "version": "0.1.0",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/DHBC.d.ts",
+        "default": "./dist/DHBC.js"
+      }
+    }
+  },
+  "repository": "git@github.com:minimalcorp/dartslive-home-bluetooth-connector.git",
+  "author": "Okuyama <okuyama@minimalcorp.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@types/web-bluetooth": "0.0.20",
+    "eslint": "9.8.0",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4"
+  }
+}

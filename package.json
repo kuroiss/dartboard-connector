@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "workspaces": {
+    "packages": [
+      "packages/**",
+      "example"
+    ]
+  },
+  "repository": "git@github.com:minimalcorp/dartslive-home-bluetooth-connector.git",
+  "author": "Okuyama <okuyama@minimalcorp.com>",
+  "scripts": {
+    "build:tsc": "yarn workspace @minimalcorp/dartslive-home-bluetooth-connector tsc",
+    "build:watch": "yarn workspace @minimalcorp/dartslive-home-bluetooth-connector tsc -w",
+    "start-example": "yarn workspace @minimalcorp/dbc-example next"
+  },
+  "private": true
+}
