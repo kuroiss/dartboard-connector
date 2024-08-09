@@ -1,33 +1,8 @@
-type DARTSLIVEHomeBluetoothConnector = {
-  connect(): Promise<boolean>
-
-  disconnect(): void
-
-  /**
-   * `value`:
-   *    segment = Math.floor(value / 20)
-   *      inner single: 0
-   *      outer single: 1
-   *      double: 2
-   *      triple: 3
-   *    area = value % 20
-   *    single bull = 81
-   *    double bull = 82
-   *    change = 84
-   *
-   * Returns `unsubscribe` function.
-   */
-  subscribe(callback: (value: number) => void): Promise<() => void>
-
-  /**
-   * Connected or not.
-   */
-  isConnected: boolean
-}
+import { DartsboardBluetoothConnector } from "./DartsboardBluetoothConnector.js"
 
 const uuid = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
 
-export class DHBC implements DARTSLIVEHomeBluetoothConnector {
+export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConnector<number> {
   private _server: BluetoothRemoteGATTServer | null = null
 
   async connect() {
@@ -56,6 +31,20 @@ export class DHBC implements DARTSLIVEHomeBluetoothConnector {
     return this._server?.connected ?? false
   }
 
+  /**
+   * `value`:
+   *    segment = Math.floor(value / 20)
+   *      inner single: 0
+   *      outer single: 1
+   *      double: 2
+   *      triple: 3
+   *    area = value % 20
+   *    single bull = 81
+   *    double bull = 82
+   *    change = 84
+   *
+   * Returns `unsubscribe` function.
+   */
   async subscribe(callback: (value: number) => void) {
     if (this._server == null) {
       throw new Error("No device has been connected. `connect` first.")

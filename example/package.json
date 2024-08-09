@@ -2,11 +2,11 @@
   "type": "module",
   "name": "@minimalcorp/dbc-example",
   "version": "0.1.0",
-  "repository": "git@github.com:minimalcorp/dartslive-home-bluetooth-connector.git",
+  "repository": "git@github.com:minimalcorp/dartsboard-bluetooth-connector.git",
   "author": "Okuyama <okuyama@minimalcorp.com>",
   "private": true,
   "dependencies": {
-    "@minimalcorp/dartslive-home-bluetooth-connector": "*",
+    "@minimalcorp/dartsboard-bluetooth-connector": "*",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

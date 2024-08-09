@@ -6,11 +6,11 @@
       "example"
     ]
   },
-  "repository": "git@github.com:minimalcorp/dartslive-home-bluetooth-connector.git",
+  "repository": "git@github.com:minimalcorp/dartsboard-bluetooth-connector.git",
   "author": "Okuyama <okuyama@minimalcorp.com>",
   "scripts": {
-    "build:tsc": "yarn workspace @minimalcorp/dartslive-home-bluetooth-connector tsc",
-    "build:watch": "yarn workspace @minimalcorp/dartslive-home-bluetooth-connector tsc -w",
+    "build:tsc": "yarn workspace @minimalcorp/dartsboard-bluetooth-connector tsc",
+    "build:watch": "yarn workspace @minimalcorp/dartsboard-bluetooth-connector tsc -w",
     "start-example": "yarn workspace @minimalcorp/dbc-example next"
   },
   "private": true
