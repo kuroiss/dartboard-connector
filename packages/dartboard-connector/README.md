@@ -1,16 +1,16 @@
-# Dartsboard Bluetooth Connector
+# Dartboard Connector
 
-Connect to Dartsboard with Web Bluetooth API.
+Connect to Dartboard with Web Bluetooth API.
 
-`yarn add @minimalcorp/dartsboard-bluetooth-connector`
+`yarn add @minimalcorp/dartboard-connector`
 
 Only ES Modules are supported.
 
-## Supported Dartsboards
+## Supported dartboards
 
 ### DARTSLIVE Home
 
-`import { DARTSLIVEHomeBluetoothConnector } from "@minimalcorp/dartsboard-bluetooth-connector/dartslive-home"`
+`import { DARTSLIVEHomeConnector } from "@minimalcorp/dartboard-connector/dartslive-home"`
 
 examples are in `example` directory.
 

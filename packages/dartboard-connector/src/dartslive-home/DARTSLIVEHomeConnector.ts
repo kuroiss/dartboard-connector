@@ -4,7 +4,7 @@ import type { Signal } from "./Signal.js"
 
 const uuid = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
 
-export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConnector<Signal> {
+export class DARTSLIVEHomeConnector implements DartsboardBluetoothConnector<Signal> {
   private _server: BluetoothRemoteGATTServer | null = null
 
   async connect() {

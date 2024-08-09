@@ -1,9 +1,9 @@
 "use client"
 
-import { DARTSLIVEHomeBluetoothConnector } from "@minimalcorp/dartsboard-bluetooth-connector/dartslive-home"
+import { DARTSLIVEHomeConnector } from "@minimalcorp/dartboard-connector/dartslive-home"
 import { useRef } from "react"
 
-const dhbc = new DARTSLIVEHomeBluetoothConnector()
+const dhbc = new DARTSLIVEHomeConnector()
 
 export const Example = () => {
   const ref = useRef<(() => void) | null>(null)

@@ -1,16 +1,16 @@
 {
   "type": "module",
-  "name": "@minimalcorp/dartsboard-bluetooth-connector",
+  "name": "@minimalcorp/dartboard-connector",
   "version": "0.1.0",
   "exports": {
     "./dartslive-home": {
       "import": {
-        "types": "./dist/DARTSLIVEHomeBluetoothConnector.d.ts",
-        "default": "./dist/DARTSLIVEHomeBluetoothConnector.js"
+        "types": "./dist/DARTSLIVEHomeConnector.d.ts",
+        "default": "./dist/DARTSLIVEHomeConnector.js"
       }
     }
   },
-  "repository": "git@github.com:minimalcorp/dartsboard-bluetooth-connector.git",
+  "repository": "git@github.com:minimalcorp/dartboard-connector.git",
   "author": "Okuyama <okuyama@minimalcorp.com>",
   "license": "MIT",
   "files": [
