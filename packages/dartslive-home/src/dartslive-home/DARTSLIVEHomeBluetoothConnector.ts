@@ -1,8 +1,10 @@
-import { DartsboardBluetoothConnector } from "./DartsboardBluetoothConnector.js"
+import { DartsboardBluetoothConnector } from "../DartsboardBluetoothConnector.js"
+import { format } from "./format.js"
+import type { Signal } from "./Signal.js"
 
 const uuid = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
 
-export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConnector<number> {
+export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConnector<Signal> {
   private _server: BluetoothRemoteGATTServer | null = null
 
   async connect() {
@@ -32,20 +34,9 @@ export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConne
   }
 
   /**
-   * `value`:
-   *    segment = Math.floor(value / 20)
-   *      inner single: 0
-   *      outer single: 1
-   *      double: 2
-   *      triple: 3
-   *    area = value % 20
-   *    single bull = 81
-   *    double bull = 82
-   *    change = 84
-   *
    * Returns `unsubscribe` function.
    */
-  async subscribe(callback: (value: number) => void) {
+  async subscribe(callback: (value: Signal) => void) {
     if (this._server == null) {
       throw new Error("No device has been connected. `connect` first.")
     }
@@ -66,7 +57,7 @@ export class DARTSLIVEHomeBluetoothConnector implements DartsboardBluetoothConne
       const target: any = event.target
       const dataview: DataView = target.value
       const value = dataview.getUint8(2)
-      callback(value)
+      callback(format(value))
     }
     characteristic.addEventListener("characteristicvaluechanged", handler)
     await characteristic.startNotifications()
