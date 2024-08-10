@@ -18,9 +18,23 @@
     "src"
   ],
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/web-bluetooth": "0.0.20",
-    "eslint": "9.8.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
     "prettier": "3.3.3",
-    "typescript": "5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.1"
+  },
+  "scripts": {
+    "lint": "eslint ./src",
+    "format": "prettier --check ./src",
+    "ci": "yarn format && yarn lint"
+  },
+  "dependencies": {
+    "eslint-plugin-react": "^7.35.0"
   }
 }

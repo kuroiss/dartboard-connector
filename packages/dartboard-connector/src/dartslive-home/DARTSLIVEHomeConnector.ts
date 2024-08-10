@@ -4,6 +4,13 @@ import type { Signal } from "./Signal.js"
 
 const uuid = "6e400001-b5a3-f393-e0a9-e50e24dcca9e"
 
+const hasValue = (target: unknown): target is EventTarget & { value: DataView } => {
+  if (typeof target !== "object" || target == null) {
+    return false
+  }
+  return "value" in target
+}
+
 export class DARTSLIVEHomeConnector implements DartsboardBluetoothConnector<Signal> {
   private _server: BluetoothRemoteGATTServer | null = null
 
@@ -54,8 +61,14 @@ export class DARTSLIVEHomeConnector implements DartsboardBluetoothConnector<Sign
     }
     const [characteristic] = filtered
     const handler: CharacteristicEventHandlers["oncharacteristicvaluechanged"] = (event) => {
-      const target: any = event.target
-      const dataview: DataView = target.value
+      const target = event.target
+      if (target == null) {
+        throw new Error("event.target is unexpectedly null.")
+      }
+      if (!hasValue(target)) {
+        throw new Error("target doesn't have 'value' field unexpectedly.")
+      }
+      const dataview = target.value
       const value = dataview.getUint8(2)
       callback(format(value))
     }

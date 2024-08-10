@@ -15,5 +15,8 @@
     "@types/node": "22.0.0",
     "@types/react": "18.3.3",
     "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "ci": "exit 0"
   }
 }

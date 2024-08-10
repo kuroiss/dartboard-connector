@@ -1,0 +1,19 @@
+name: CI
+on:
+  pull_request:
+    paths:
+      - "example/**"
+      - "packages/**"
+
+jobs:
+  status_check:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20.16.0"
+          cache: "yarn"
+      - run: yarn install --frozen-lockfile
+      - run: yarn workspaces run ci

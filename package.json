@@ -11,7 +11,8 @@
   "scripts": {
     "build:tsc": "yarn workspace @minimalcorp/dartboard-connector tsc",
     "build:watch": "yarn workspace @minimalcorp/dartboard-connector tsc -w",
-    "start-example": "yarn workspace @minimalcorp/dartboard-connector-example next"
+    "start-example": "yarn workspace @minimalcorp/dartboard-connector-example next",
+    "ci": "yarn workspaces run ci"
   },
   "private": true
 }
