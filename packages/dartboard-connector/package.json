@@ -33,8 +33,5 @@
     "lint": "eslint ./src",
     "format": "prettier --check ./src",
     "ci": "yarn format && yarn lint"
-  },
-  "dependencies": {
-    "eslint-plugin-react": "^7.35.0"
   }
 }

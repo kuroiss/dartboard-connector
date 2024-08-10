@@ -9,7 +9,7 @@
   "repository": "git@github.com:minimalcorp/dartboard-connector.git",
   "author": "Okuyama <okuyama@minimalcorp.com>",
   "scripts": {
-    "build:tsc": "yarn workspace @minimalcorp/dartboard-connector tsc",
+    "build": "yarn workspace @minimalcorp/dartboard-connector tsc",
     "build:watch": "yarn workspace @minimalcorp/dartboard-connector tsc -w",
     "start-example": "yarn workspace @minimalcorp/dartboard-connector-example next",
     "ci": "yarn workspaces run ci"
