@@ -27,9 +27,21 @@ export const format = (value: number): Signal => {
     return 1
   })()
   const base = value % 20 || 20
-  return {
-    type: "segment",
-    base,
-    ratio,
+  if(segmentType === 0)
+  {
+    return {
+      type: "segment",
+      inner: true,
+      base,
+      ratio,
+    }
+  }
+  else
+  {
+    return {
+      type: "segment",
+      base,
+      ratio,
+    }
   }
 }
